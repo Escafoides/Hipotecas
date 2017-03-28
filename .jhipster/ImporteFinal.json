@@ -1,0 +1,44 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "terreno",
+            "otherEntityName": "terreno",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "importeFinal"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "intervalo",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "capitalInicial",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "interesAnual",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "importeAnual",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "importeMes",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "importeTotal",
+            "fieldType": "Float"
+        }
+    ],
+    "changelogDate": "20170323120432",
+    "entityTableName": "importe_final",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

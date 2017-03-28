@@ -1,0 +1,35 @@
+
+<div>
+    <h2><span>Servicios Terreno</span> {{vm.serviciosTerreno.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Agua</span></dt>
+        <dd>
+            <span>{{vm.serviciosTerreno.agua}}</span>
+        </dd>
+        <dt><span>Luz</span></dt>
+        <dd>
+            <span>{{vm.serviciosTerreno.luz}}</span>
+        </dd>
+        <dt><span>Telefono</span></dt>
+        <dd>
+            <span>{{vm.serviciosTerreno.telefono}}</span>
+        </dd>
+        <dt><span>Carretera</span></dt>
+        <dd>
+            <span>{{vm.serviciosTerreno.carretera}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="servicios-terreno-detail.edit({id:vm.serviciosTerreno.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down"> Edit</span>
+    </button>
+</div>

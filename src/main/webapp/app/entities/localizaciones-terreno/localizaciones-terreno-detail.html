@@ -1,0 +1,39 @@
+
+<div>
+    <h2><span>Localizaciones Terreno</span> {{vm.localizacionesTerreno.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Latitude</span></dt>
+        <dd>
+            <span>{{vm.localizacionesTerreno.latitude}}</span>
+        </dd>
+        <dt><span>Longitude</span></dt>
+        <dd>
+            <span>{{vm.localizacionesTerreno.longitude}}</span>
+        </dd>
+        <dt><span>Pais</span></dt>
+        <dd>
+            <span>{{vm.localizacionesTerreno.pais}}</span>
+        </dd>
+        <dt><span>Comunidad</span></dt>
+        <dd>
+            <span>{{vm.localizacionesTerreno.comunidad}}</span>
+        </dd>
+        <dt><span>Provincia</span></dt>
+        <dd>
+            <span>{{vm.localizacionesTerreno.provincia}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="localizaciones-terreno-detail.edit({id:vm.localizacionesTerreno.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down"> Edit</span>
+    </button>
+</div>

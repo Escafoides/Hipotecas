@@ -1,0 +1,70 @@
+<div>
+    <h2>Terrenos</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="terreno.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span >
+                        Create new Terreno
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span>ID</span></th>
+                    <th><span>Nombre</span></th>
+                    <th><span>Precio</span></th>
+                    <th><span>Caracteristicas Terreno</span></th>
+                    <th><span>Servicios Terreno</span></th>
+                    <th><span>Localizaciones Terreno</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="terreno in vm.terrenos track by terreno.id">
+                    <td><a ui-sref="terreno-detail({id:terreno.id})">{{terreno.id}}</a></td>
+                    <td>{{terreno.nombre}}</td>
+                    <td>{{terreno.precio}}</td>
+                    <td>
+                        <a ui-sref="caracteristicas-terreno-detail({id:terreno.caracteristicasTerreno.id})">{{terreno.caracteristicasTerreno.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="servicios-terreno-detail({id:terreno.serviciosTerreno.id})">{{terreno.serviciosTerreno.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="localizaciones-terreno-detail({id:terreno.localizacionesTerreno.id})">{{terreno.localizacionesTerreno.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="terreno-detail({id:terreno.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="terreno.edit({id:terreno.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="terreno.delete({id:terreno.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

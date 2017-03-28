@@ -1,0 +1,68 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myImporteFinalLabel">Create or edit a Importe Final</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.importeFinal.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.importeFinal.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_intervalo">Intervalo</label>
+            <input type="number" class="form-control" name="intervalo" id="field_intervalo"
+                    ng-model="vm.importeFinal.intervalo"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_capitalInicial">Capital Inicial</label>
+            <input type="number" class="form-control" name="capitalInicial" id="field_capitalInicial"
+                    ng-model="vm.importeFinal.capitalInicial"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_interesAnual">Interes Anual</label>
+            <input type="number" class="form-control" name="interesAnual" id="field_interesAnual"
+                    ng-model="vm.importeFinal.interesAnual"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_importeAnual">Importe Anual</label>
+            <input type="number" class="form-control" name="importeAnual" id="field_importeAnual"
+                    ng-model="vm.importeFinal.importeAnual"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_importeMes">Importe Mes</label>
+            <input type="number" class="form-control" name="importeMes" id="field_importeMes"
+                    ng-model="vm.importeFinal.importeMes"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_importeTotal">Importe Total</label>
+            <input type="number" class="form-control" name="importeTotal" id="field_importeTotal"
+                    ng-model="vm.importeFinal.importeTotal"
+                    />
+        </div>
+
+        <div class="form-group">
+            <label for="field_terreno">Terreno</label>
+            <select class="form-control" id="field_terreno" name="terreno" ng-model="vm.importeFinal.terreno" ng-options="terreno as terreno.id for terreno in vm.terrenos | orderBy:'id' track by terreno.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

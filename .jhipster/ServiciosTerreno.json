@@ -1,0 +1,27 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "agua",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "luz",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "telefono",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "carretera",
+            "fieldType": "Boolean"
+        }
+    ],
+    "changelogDate": "20170323120432",
+    "entityTableName": "servicios_terreno",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

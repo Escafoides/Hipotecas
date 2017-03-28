@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Terreno.
+    -->
+    <changeSet id="20170323120432-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="caracteristicas_terreno_id"
+                                 baseTableName="terreno"
+                                 constraintName="fk_terreno_caracteristicas_terreno_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="caracteristicas_terreno"/>
+
+        <addForeignKeyConstraint baseColumnNames="servicios_terreno_id"
+                                 baseTableName="terreno"
+                                 constraintName="fk_terreno_servicios_terreno_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="servicios_terreno"/>
+
+        <addForeignKeyConstraint baseColumnNames="localizaciones_terreno_id"
+                                 baseTableName="terreno"
+                                 constraintName="fk_terreno_localizaciones_terreno_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="localizaciones_terreno"/>
+
+    </changeSet>
+</databaseChangeLog>

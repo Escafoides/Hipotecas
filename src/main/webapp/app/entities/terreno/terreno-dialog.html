@@ -1,0 +1,56 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myTerrenoLabel">Create or edit a Terreno</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.terreno.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.terreno.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_nombre">Nombre</label>
+            <input type="text" class="form-control" name="nombre" id="field_nombre"
+                    ng-model="vm.terreno.nombre"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_precio">Precio</label>
+            <input type="number" class="form-control" name="precio" id="field_precio"
+                    ng-model="vm.terreno.precio"
+                    />
+        </div>
+
+        <div class="form-group">
+            <label for="field_caracteristicasTerreno">Caracteristicas Terreno</label>
+            <select class="form-control" id="field_caracteristicasTerreno" name="caracteristicasTerreno" ng-model="vm.terreno.caracteristicasTerreno" ng-options="caracteristicasTerreno as caracteristicasTerreno.id for caracteristicasTerreno in vm.caracteristicasterrenos | orderBy:'id' track by caracteristicasTerreno.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="field_serviciosTerreno">Servicios Terreno</label>
+            <select class="form-control" id="field_serviciosTerreno" name="serviciosTerreno" ng-model="vm.terreno.serviciosTerreno" ng-options="serviciosTerreno as serviciosTerreno.id for serviciosTerreno in vm.serviciosterrenos | orderBy:'id' track by serviciosTerreno.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="field_localizacionesTerreno">Localizaciones Terreno</label>
+            <select class="form-control" id="field_localizacionesTerreno" name="localizacionesTerreno" ng-model="vm.terreno.localizacionesTerreno" ng-options="localizacionesTerreno as localizacionesTerreno.id for localizacionesTerreno in vm.localizacionesterrenos | orderBy:'id' track by localizacionesTerreno.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

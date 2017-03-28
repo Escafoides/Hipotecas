@@ -1,0 +1,64 @@
+<div>
+    <h2>Localizaciones Terrenos</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="localizaciones-terreno.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span >
+                        Create new Localizaciones Terreno
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span>ID</span></th>
+                    <th><span>Latitude</span></th>
+                    <th><span>Longitude</span></th>
+                    <th><span>Pais</span></th>
+                    <th><span>Comunidad</span></th>
+                    <th><span>Provincia</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="localizacionesTerreno in vm.localizacionesTerrenos track by localizacionesTerreno.id">
+                    <td><a ui-sref="localizaciones-terreno-detail({id:localizacionesTerreno.id})">{{localizacionesTerreno.id}}</a></td>
+                    <td>{{localizacionesTerreno.latitude}}</td>
+                    <td>{{localizacionesTerreno.longitude}}</td>
+                    <td>{{localizacionesTerreno.pais}}</td>
+                    <td>{{localizacionesTerreno.comunidad}}</td>
+                    <td>{{localizacionesTerreno.provincia}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="localizaciones-terreno-detail({id:localizacionesTerreno.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="localizaciones-terreno.edit({id:localizacionesTerreno.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="localizaciones-terreno.delete({id:localizacionesTerreno.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

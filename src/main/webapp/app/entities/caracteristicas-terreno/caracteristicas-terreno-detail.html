@@ -1,0 +1,27 @@
+
+<div>
+    <h2><span>Caracteristicas Terreno</span> {{vm.caracteristicasTerreno.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Superficie</span></dt>
+        <dd>
+            <span>{{vm.caracteristicasTerreno.superficie}}</span>
+        </dd>
+        <dt><span>Tipo</span></dt>
+        <dd>
+            <span>{{vm.caracteristicasTerreno.tipo}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="caracteristicas-terreno-detail.edit({id:vm.caracteristicasTerreno.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down"> Edit</span>
+    </button>
+</div>

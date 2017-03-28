@@ -1,0 +1,47 @@
+
+<div>
+    <h2><span>Importe Final</span> {{vm.importeFinal.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Intervalo</span></dt>
+        <dd>
+            <span>{{vm.importeFinal.intervalo}}</span>
+        </dd>
+        <dt><span>Capital Inicial</span></dt>
+        <dd>
+            <span>{{vm.importeFinal.capitalInicial}}</span>
+        </dd>
+        <dt><span>Interes Anual</span></dt>
+        <dd>
+            <span>{{vm.importeFinal.interesAnual}}</span>
+        </dd>
+        <dt><span>Importe Anual</span></dt>
+        <dd>
+            <span>{{vm.importeFinal.importeAnual}}</span>
+        </dd>
+        <dt><span>Importe Mes</span></dt>
+        <dd>
+            <span>{{vm.importeFinal.importeMes}}</span>
+        </dd>
+        <dt><span>Importe Total</span></dt>
+        <dd>
+            <span>{{vm.importeFinal.importeTotal}}</span>
+        </dd>
+        <dt><span>Terreno</span></dt>
+        <dd>
+            <a ui-sref="terreno-detail({id:vm.importeFinal.terreno.id})">{{vm.importeFinal.terreno.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="importe-final-detail.edit({id:vm.importeFinal.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down"> Edit</span>
+    </button>
+</div>

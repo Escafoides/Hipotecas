@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity ImporteFinal.
+    -->
+    <changeSet id="20170323120432-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="terreno_id"
+                                 baseTableName="importe_final"
+                                 constraintName="fk_importe_final_terreno_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="terreno"/>
+
+    </changeSet>
+</databaseChangeLog>

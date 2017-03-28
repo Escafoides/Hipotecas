@@ -1,0 +1,54 @@
+entity Terreno {
+	nombre String,
+    precio Float
+}
+
+entity ImporteFinal {
+    intervalo Integer,
+    capitalInicial Float, 
+    interesAnual Float,
+    importeAnual Float,
+    importeMes Float,
+    importeTotal Float
+}
+
+// an ignored comment
+/** not an ignored comment */
+entity CaracteristicasTerreno {
+	superficie Integer,
+    tipo Integer
+}
+
+
+
+entity LocalizacionesTerreno {
+	latitude Integer,
+    longitude Integer,
+    pais String,
+    comunidad String,
+    provincia String,  
+}
+
+entity ServiciosTerreno {
+	agua Boolean,
+    luz Boolean,
+    telefono Boolean,
+    carretera Boolean,  
+}
+
+relationship OneToOne {
+	Terreno{caracteristicasTerreno} to CaracteristicasTerreno
+}
+
+relationship OneToOne {
+	Terreno{serviciosTerreno} to ServiciosTerreno
+}
+
+relationship OneToOne {
+	Terreno{localizacionesTerreno} to LocalizacionesTerreno
+}
+
+relationship OneToOne {
+	ImporteFinal{terreno} to Terreno
+}
+
